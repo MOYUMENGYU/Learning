@@ -1,18 +1,52 @@
 package experiment_first;
 
+import javax.xml.crypto.Data;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * 进程控制块
  */
 public class PCB {
-    static int pid;
-    private String programName;
-    private String  status;
-    private int priority;
-    private long creatTime;
-    private long runTime;
+    static int pid;//pcb id 唯一标识
+    private int id;
+    private String programName;//程序运行名称
+    private String  status;//运行状态
+    private int priority;//优先级
+    private long creatTime;//创建时间
+    private long runTime;//运行时间
+    private long arriveTime;
+    private long startTime;
 
     public PCB(){
         pid++;
+    }
+    public int getPid(){
+        return pid;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public long getArriveTime() {
+        return arriveTime;
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setArriveTime(long arriveTime) {
+        this.arriveTime = arriveTime;
     }
 
     public String getStatus() {
